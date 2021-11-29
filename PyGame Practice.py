@@ -16,3 +16,9 @@ WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
+
+# Setup Fonts
+basicFont = pygame.font.SysFont(None,48)
+
+# SetUp Text
+text = basicFont.render('Hello, World', True, WHITE, BLUE) 
