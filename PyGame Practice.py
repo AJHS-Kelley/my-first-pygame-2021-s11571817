@@ -1,4 +1,4 @@
-# PyGame Practice, Caile Harden, 11/29/21 8:44am, v0.1
+# PyGame Practice, Caile Harden, 11/29/21 9:22am, v0.4
 
 import pygame, sys
 from pygame.locals import *
@@ -22,3 +22,12 @@ basicFont = pygame.font.SysFont(None,48)
 
 # SetUp Text
 text = basicFont.render('Hello, World', True, WHITE, BLUE) 
+textRect = text.get_rect()
+textRect.centerx = windowSurface.get_rect().centerx
+textRect.centery = windowSurface.get_rect().centery
+
+# Draw Background onto window surface
+windowSurface.fill(WHITE)
+
+# Draw a green polygon onto the surface
+pygame.draw.polygon(windowSurface, GREEN, ((146, 0), (291, 106), (236, 277), (56, 277), (0, 106)))
