@@ -1,4 +1,4 @@
-# PyGame Practice, Caile Harden, 11/29/21 9:30am, v0.5
+# PyGame Practice, Caile Harden, 12/1/21 8:37am, v0.6
 
 import pygame, sys
 from pygame.locals import *
@@ -16,6 +16,9 @@ WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 GREEN = (0, 255, 0)
 BLUE = (0, 0, 255)
+MAROON = (128, 0, 0)
+PERIWINKLE = (179, 179, 255)
+SAGE = (159, 223, 159)
 
 # Setup Fonts
 basicFont = pygame.font.SysFont(None,48)
@@ -27,7 +30,7 @@ textRect.centerx = windowSurface.get_rect().centerx
 textRect.centery = windowSurface.get_rect().centery
 
 # Draw Background onto window surface
-windowSurface.fill(WHITE)
+windowSurface.fill(PERIWINKLE)
 
 # Draw a green polygon onto the surface
 pygame.draw.polygon(windowSurface, GREEN, ((146, 0), (291, 106), (236, 277), (56, 277), (0, 106)))
@@ -41,4 +44,19 @@ pygame.draw.line(windowSurface, BLUE, (60, 120), (120, 120), 4)
 pygame.draw.circle(windowSurface, RED, (300, 50), 20, 0)
 
 #Draw an ellipse
-pygame.draw.ellipse(windowSurface, GREEN, (300, 250, 40, 80), 1)
+pygame.draw.ellipse(windowSurface, MAROON, (300, 250, 40, 80), 1)
+
+# Draw a text background rectangle onto surface
+pygame.draw.rect(windowSurface, BLUE, (textRect.left - 20, textRect.top - 20, textRect.width + 40, textRect.height + 40))
+
+# Get a pixel array of the surface
+pixArray = pygame.PixelArray(windowSurface)
+pixArray[480][380] = SAGE
+del pixArray
+
+# Draw the text onto the surface
+windowSurface.blit(text, textRect)
+
+
+
+
