@@ -1,4 +1,4 @@
-# PyGame Practice, Caile Harden, 12/1/21 8:37am, v0.6
+# PyGame Practice, Caile Harden, 12/1/21 8:45am, v0.7
 
 import pygame, sys
 from pygame.locals import *
@@ -56,6 +56,19 @@ del pixArray
 
 # Draw the text onto the surface
 windowSurface.blit(text, textRect)
+
+# Draw the window onto the screen
+pygame.display.update()
+
+#Run the game loop
+while True:
+    for event in pygame.event.get():
+        if event.type == QUIT:
+            pygame.quit()
+            sys.exit()
+
+
+
 
 
 
